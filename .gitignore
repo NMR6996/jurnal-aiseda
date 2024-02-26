@@ -1,0 +1,6 @@
+static
+uploads
+venv
+.env
+.idea
+db.sqlite3

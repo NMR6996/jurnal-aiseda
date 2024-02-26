@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Əsas səhifə {% endblock %}
+{% block content %}
+
+    <div class="content">
+        <div class="content_resize">
+            <div class="mainbar">
+                <div class="article">
+                    <ul class="sb_menu">
+                        {% for volume in volumes %}
+                            <li style="width: 100%;">
+                                <a href="{% url 'details' volume.id %}">
+                                    <strong>{{ volume.title }}</strong>
+                                </a>
+                                <strong style="float: right; margin-right: 20px;">hits: {{ volume.click_count }} </strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% include '_sidebar.html' %}
+            <div class="clr"></div>
+        </div>
+    </div>
+
+{% endblock %}

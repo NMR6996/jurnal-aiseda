@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="az" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AİSEDA Jurnalı | {% block title %} {% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/cufon-yui.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/georgia.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/cuf_run.js' %}" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div class="header" style="background:url({% static 'images/header_bg.jpg' %}) repeat-x center top;">
+        <div class="header_resize">
+            <div class="logo">
+                <h1><a href="{% url 'index' %}">AİSEDA jurnalı<br/>
+                    <small>put your slogan here</small></a></h1>
+            </div>
+            <div class="menu_nav">
+                <ul>
+                    <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'volume' %}">Volumes</a></li>
+                    <li><a href="">Authors</a></li>
+                </ul>
+                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="footer">
+        <div class="footer_resize">
+            <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="">Website Templates</a></p>
+            <p class="lf">International Journal of Instruction apply the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) to all manuscripts to be published.</p>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
